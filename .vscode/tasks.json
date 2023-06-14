@@ -8,9 +8,9 @@
 			"args": [
 				"-g",
 				"-std=c++20",
-				"${workspaceFolder}/src/*.cpp",
+				"${workspaceFolder}\\src/*.cpp",
 				"-o",
-				"${workspaceFolder}\\src\\main.cpp"
+				"${workspaceFolder}\\build\\application.exe"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}\\build"
@@ -31,7 +31,8 @@
 			"args": [
 				"-g",
 				"-std=c++20",
-				"${workspaceFolder}\\src\\main.cpp",
+				"-Idir",
+				"${workspaceFolder}\\src/*.cpp",
 				"-o",
 				"${workspaceFolder}\\build\\application.exe"
 			],
@@ -53,7 +54,29 @@
 				"/std:c++latest",
 				"/EHsc",
 				"/Fe:${workspaceFolder}\\build\\application.exe",
-				"${workspaceFolder}\\src\\main.cpp"
+				"-Idir",
+				"${workspaceFolder}\\src/*.cpp"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}\\build"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build",
+			"detail": "compiler: cl.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "Build with MSVC",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/std:c++latest",
+				"/EHsc",
+				"/Fe:${workspaceFolder}\\build\\application.exe",
+				"-Idir",
+				"${workspaceFolder}\\src/*.cpp"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}\\build"
